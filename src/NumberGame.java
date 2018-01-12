@@ -1,3 +1,4 @@
+
 /**
  * The base class for all number games.
  * Your guessing game should extend this class and
@@ -5,15 +6,17 @@
  * 
  * Your class should not override getMessage() and setMessage(),
  * just use the methods from this class.
+ * @author Pimwalun Witchawanitchanun
  */
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
+	private int count = 0;
 
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
-    	message = "";
+    	message = "I'm thinking of a number between 1 and " + getUpperBound();
     }
    
     /**
@@ -22,7 +25,6 @@ public class NumberGame {
      * @return true if correct, false otherwise
      */
     public boolean guess(int answer) {
-		// TODO your subclass should override this method
 		message = "Sorry, that's not correct";
 		return false;
     }
@@ -62,4 +64,12 @@ public class NumberGame {
     public String toString() {
 		return "You should override this method for your game";
     }
+	
+	/**
+	 * Return the recent count
+	 * @return the recent count
+	 */
+	public int getCount(){
+		return this.count;
+	}
 }
