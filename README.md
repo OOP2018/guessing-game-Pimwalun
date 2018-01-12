@@ -1,3 +1,4 @@
+## Pimwalun Witchawanitchanun (5910546686)
 ## Guessing Game
 
 Write a Guessing Game consisting of 3 classes plus one base class that is given.
