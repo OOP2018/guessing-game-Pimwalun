@@ -9,11 +9,11 @@
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
-		int upperBound = 100;
+		int upperBound = 2;
 		PimwalunGame game = new PimwalunGame(upperBound);
 		GameSolver ui = new GameSolver();
 		int solution = ui.play( game );
-		System.out.println("Count " + game.getCount() + " times");
 		System.out.println("play() returned " + solution);
+		System.out.println("Count " + game.getCount() + " times");
 	}
 }

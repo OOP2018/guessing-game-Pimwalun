@@ -1,7 +1,6 @@
-import java.util.Scanner;
 
 /**
- * This class is play auto game.
+ * Automatically find the secret to any NumberGame.
  * 
  * @author Pimwalun Witchawanitchanun
  *
@@ -17,11 +16,11 @@ public class GameSolver {
 	 * @return the number is equal to the secret number.
 	 */
 	public int play(NumberGame game) {
-		Scanner console = new Scanner(System.in);
 		String title = "Guessing Game";
 		String prompt = "Your answer? ";
 		System.out.println(game.getMessage());
 		System.out.println(title);
+
 		int guess = game.getUpperBound() / 2;
 		int guess2 = game.getUpperBound() / 4;
 		boolean correct = game.guess(guess);
