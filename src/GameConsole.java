@@ -2,10 +2,15 @@ import java.util.Scanner;
 
 /** 
  *  Play guessing game on the console.
+ *  
+ *  @author Pimwalun Witchawanitchanun
+ *  
  */
 public class GameConsole {
 
-	/** play the game. */
+	/** play the game. 
+	 * 	@return the number is equal to the secret number.
+	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		String title = "Guessing Game";

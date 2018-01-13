@@ -1,13 +1,20 @@
 import java.util.Scanner;
 
+/**
+ * This class is play auto game.
+ * 
+ * @author Pimwalun Witchawanitchanun
+ *
+ */
 public class GameSolver {
+	
 	/**Play a NumberGame and return the solution.
 	 * The NumberGame object must provide messages (getMessage)
 	 * containing the phrase "too small" if a guess is too small
 	 * and "too large" if a guess is too large, for efficient
 	 * solution.
 	 * @param game is the NumberGame to solve.
-	 * @return guess is equal secret number.
+	 * @return the number is equal to the secret number.
 	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);

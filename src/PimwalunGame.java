@@ -2,10 +2,11 @@ import java.util.Random;
 
 /**
  * This class is Guessing secret number
+ * 
  * @author Pimwalun Witchawanitchanun
  *
  */
-public class GuessingGame extends NumberGame {
+public class PimwalunGame extends NumberGame {
 	private int upperBound;
 	private int secret;
 	private int count;
@@ -14,7 +15,7 @@ public class GuessingGame extends NumberGame {
 	 * Initialize a new game
 	 * @param upperBound is the max value for the secret number (>1).
 	 */
-	public GuessingGame(int upperBound) {
+	public PimwalunGame(int upperBound) {
 		this.upperBound = upperBound;
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
@@ -44,21 +45,25 @@ public class GuessingGame extends NumberGame {
 	}
 
 	/**
-	 * get max number.
+	 * Get max number.
 	 * @return max number.
 	 */
 	public int getUpperBound() {
 		return this.upperBound;
 	}
 
+	/** 
+	 *Return a string representation of this Game. 
+	 *@return a string representation of this Game.
+	 */
 	@Override
 	public String toString() {
 		return "Guess a secret number between 1 and " + this.upperBound;
 	}
 	
 	/**
-	 * Return the recent count
-	 * @return the recent count
+	 * Return the recent count.
+	 * @return the recent count.
 	 */
 	public int getCount(){
 		return this.count;
