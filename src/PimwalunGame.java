@@ -30,18 +30,15 @@ public class PimwalunGame extends NumberGame {
 	 */
 	@Override
 	public boolean guess(int number) {
+		this.count++;
 		if (number == this.secret) {
 			setMessage("Right! The secret number is " + this.secret);
 			return true;
-		} 
-		this.count++;
-		if (number < this.secret) {
+		} else if (number < this.secret) {
 			setMessage("too small");
-			return false;
 		} else if (number > this.secret){
 			setMessage("too large");
-			return false;
-		}
+		}		
 		return false;
 	}
 

@@ -16,30 +16,34 @@ public class GameSolver {
 	 * @return the number is equal to the secret number.
 	 */
 	public int play(NumberGame game) {
-		String title = "Guessing Game";
 		String prompt = "Your answer? ";
 		System.out.println(game.getMessage());
-		System.out.println(title);
-
-		int guess = game.getUpperBound() / 2;
-		int guess2 = game.getUpperBound() / 4;
+		int min,max,guess,guess2,lastguess;
+		min = 1;
+		max = game.getUpperBound();
+		guess = min + (max - min)/2;
+		guess2 = guess/2;
 		boolean correct = game.guess(guess);
-		while (!correct) {
+		while (!correct){
+			System.out.print(prompt);
+			System.out.println(guess);
+			System.out.println(game.getMessage());
+			lastguess = guess;
 			if (game.getMessage().contains("too small")) {	
-				System.out.print(prompt);
 				guess = guess + guess2;
-				System.out.println(guess);
 			} else if (game.getMessage().contains("too large")) {
-				System.out.print(prompt);
 				guess = guess - guess2;
-				System.out.println(guess);
 			}
-			if (guess2 != 1) {
-				guess2 = guess2 / 2;
+			if (guess2 > 1) {
+				guess2 /= 2;
+			}
+			if (lastguess == guess){
+				guess++;
 			}
 			correct = game.guess(guess);
-			System.out.println(game.getMessage());
 		}
+		System.out.println(prompt+guess);
+		System.out.println(game.getMessage());
 		return guess;
 	}
 }
