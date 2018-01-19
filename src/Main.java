@@ -9,7 +9,7 @@
 public class Main {
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game
-		int upperBound = 101;
+		int upperBound = 100;
 		PimwalunGame game = new PimwalunGame(upperBound);
 		GameSolver ui = new GameSolver();
 		int solution = ui.play( game );
