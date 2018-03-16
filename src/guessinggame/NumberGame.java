@@ -1,3 +1,6 @@
+package guessinggame;
+
+import java.util.Observable;
 
 /**
  * The base class for all number games.
@@ -10,7 +13,7 @@
  * @author Pimwalun Witchawanitchanun
  * 
  */
-public class NumberGame {
+public class NumberGame extends Observable{
 	/** A helpful message for user. */
 	private String message;
 	private int count = 0;

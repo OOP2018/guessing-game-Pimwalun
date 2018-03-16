@@ -1,3 +1,4 @@
+package guessinggame;
 
 /**
  * Automatically find the secret to any NumberGame.

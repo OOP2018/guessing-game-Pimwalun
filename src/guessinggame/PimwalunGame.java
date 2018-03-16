@@ -1,3 +1,4 @@
+package guessinggame;
 import java.util.Random;
 
 /**
@@ -32,13 +33,17 @@ public class PimwalunGame extends NumberGame {
 	public boolean guess(int number) {
 		this.count++;
 		if (number == this.secret) {
+			setChanged();
+			notifyObservers(number);
 			setMessage("Right! The secret number is " + this.secret);
 			return true;
 		} else if (number < this.secret) {
 			setMessage("too small");
 		} else if (number > this.secret){
 			setMessage("too large");
-		}		
+		}
+		setChanged();
+		notifyObservers(number);
 		return false;
 	}
 
@@ -66,4 +71,5 @@ public class PimwalunGame extends NumberGame {
 	public int getCount(){
 		return this.count;
 	}
+	
 }
