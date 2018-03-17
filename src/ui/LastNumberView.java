@@ -14,7 +14,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * A Controller for a window that shows the guess number.
+ * A Controller for a window that shows the last guess number.
  * @author Pimwalun Witchawanitchanun
  *
  */
@@ -23,18 +23,21 @@ public class LastNumberView extends Stage implements Observer {
 	private Stage stage;
 	/** a guess number of NumberGame to show value of */
 	private NumberGame game;
-	/** the label that shows the counter value. */
+	/** the label that shows the last guess number. */
 	private Label label;
 	
 	/**
-	 * Initialize a CounterView, which shows value of a counter.
-	 * @param counter the Counter to show.
+	 * Initialize a LastNumberView, which shows value of last guess number.
+	 * @param game the NumberGame to show.
 	 */
-	public LastNumberView(NumberGame pGame) {
-		this.game = pGame;
+	public LastNumberView(NumberGame game) {
+		this.game = game;
 		initComponents();
 	}
 	
+	/**
+	 * Ui for LastNumberView
+	 */
 	private void initComponents() {
 		stage = this;
 		// components and containers for our window
@@ -56,19 +59,26 @@ public class LastNumberView extends Stage implements Observer {
 		this.sizeToScene();
 	}
 	
-	/** Show the window and update the guess number. */
+	/** Show the window and update the last guess number. */
 	public void run() {
 		stage.show();
-		displayNumber(0);
+		displayLastNumber(0);
 	}
 	
-	public void displayNumber(int number) {
+	/**
+	 * Display the last guess number from player.
+	 * @param number is the last guess number.
+	 */
+	public void displayLastNumber(int number) {
 		label.setText( String.format("%2d", number) );
 	}
-
+	
+	/**
+	 * Update display the last guess number.
+	 */
 	@Override
-	public void update(Observable suject, Object info) {
+	public void update(Observable subject, Object info) {
 		int number = (int) info;
-		displayNumber(number);
+		displayLastNumber(number);
 	}	
 }

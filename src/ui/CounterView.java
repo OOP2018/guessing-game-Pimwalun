@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * A Controller for a window that shows the value of a counter from guess.
+ * A Controller for a window that shows the value of a count from guess.
  * @author Pimwalun Witchawanitchanun
  *
  */
@@ -26,14 +26,17 @@ public class CounterView extends Stage implements Observer {
 	private Label label;
 	
 	/**
-	 * Initialize a CounterView, which shows value of a counter.
-	 * @param counter the NumberGame to show.
+	 * Initialize a CounterView, which shows value of a count from guess.
+	 * @param game the NumberGame to show.
 	 */
-	public CounterView(NumberGame pGame) {
-		this.game = pGame;
+	public CounterView(NumberGame game) {
+		this.game = game;
 		initComponents();
 	}
 	
+	/**
+	 * Ui for CounterView.
+	 */
 	private void initComponents() {
 		stage = this;
 		// components and containers for our window
@@ -62,12 +65,18 @@ public class CounterView extends Stage implements Observer {
 		displayCount();
 	}
 	
+	/**
+	 * Display count number of guesses.
+	 */
 	public void displayCount() {
 		label.setText( String.format("%2d", game.getCount()) );
 	}
 
+	/**
+	 * Update count number of guesses.
+	 */
 	@Override
-	public void update(Observable suject, Object info) {
+	public void update(Observable subject, Object info) {
 		displayCount();
 	}	
 }

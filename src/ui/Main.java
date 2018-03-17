@@ -12,8 +12,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Launch the program.
+ * @author Pimwalun Witchawanitchanun
+ *
+ */
 public class Main extends Application{
 	
+	/**
+	 * Start the application
+	 * @param stage the primary "stage" for showing the scene.
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		NumberGame pGame = new PimwalunGame(50);
@@ -47,9 +56,11 @@ public class Main extends Application{
 		view2.run();
 	}
 	
+	/**
+	 * Launch the program.
+	 * @param args not use.
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
-
-
 }
